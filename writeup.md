@@ -15,7 +15,7 @@
 6、Fill in the IK_server.py with your Inverse Kinematics code. Instructions on how to do the math behind IK can be found here and how to convert your IK math into code can be found here.
 
 ## kuka arm
-![Alt text](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/1.jpg)
+![Alt text](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/1.jpg)
 
 ## Define DH param symbols
 d1, d2, d3, d4, d5, d6, d7 = symbols('d1:8')
@@ -28,7 +28,7 @@ q1, q2, q3, q4, q5, q6, q7 = symbols('q1:8')
 alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7')
 
 ## Analyze each mechanical arm coordinate system
-![Alt text7](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/7.jpg)
+![Alt text7](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/7.jpg)
 
 ## Define Modified DH Transformation matrix
 
@@ -80,12 +80,12 @@ alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7')
             R_corr = R_z*R_y
          
 # Calculate theta1
-![Alt text2](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/2.jpg)
+![Alt text2](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/2.jpg)
 
      theta1 = atan2(wy, wx)
      
 # Calculate theta2
-![Alt text3](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/3.jpg)
+![Alt text3](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/3.jpg)
 
             #distance 
             dis_2_3=a2
@@ -103,7 +103,7 @@ alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7')
             theta2 = pi/2-theta2_2-theta2_1 
             
 # Calculate theta3
-![Alt text4](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/4.jpg)
+![Alt text4](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/4.jpg)
 
             theta3_1=atan2(a3,d4)
             cos_theta3_2 = (dis_2_3**2+dis_3_4**2-dis_2_4**2)/(2*dis_2_3*dis_3_4)
@@ -112,9 +112,9 @@ alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7')
             theta3 = pi/2 - theta3_2-theta3_1
             
 # Calculate theta4 5 6
-![Alt text5](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/5.jpg)
-![Alt text6](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/6.jpg)
-![Alt text7](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/7.jpg)
+![Alt text5](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/5.jpg)
+![Alt text6](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/6.jpg)
+![Alt text7](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/7.jpg)
 
             theta4=atan2(new_R3_6[2,2],-new_R3_6[0,2])
             sin_theta5=sqrt(new_R3_6[2,2]**2+new_R3_6[0,2]**2)
@@ -122,5 +122,5 @@ alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7')
             theta6=atan2(-new_R3_6[1,1],new_R3_6[1,0])
             
 # result
-![Alt text8](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/RoboND-Kinematics-Project/writeup_picture/8.jpg)
+![Alt text8](https://github.com/nnresearcher/RoboND-Kinematics-Project/blob/master/writeup_picture/8.jpg)
 I think it is enough. 
